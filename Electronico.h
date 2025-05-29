@@ -17,7 +17,7 @@ public:
     void setGarantia(int g) { garantiaMeses = g; }
 
     string descripcion() override {
-        return "Electrónico: " + nombre + ", Precio: $" + to_string(precio) + ", Garantía: " + to_string(garantiaMeses) + " meses";
+        return "Electronico: " + nombre + ", Precio: $" + to_string(precio) + ", Garantia: " + to_string(garantiaMeses) + " meses";
     }
 };
 
