@@ -16,3 +16,9 @@ El sistema permite:
 - Calcular subtotales y totales de los pedidos
 - Gestionar información de envío
 - Administrar el catálogo desde la cuenta del administrador
+
+Casos de fallo:
+Lo del carrito deje de existir
+El pedido este retrasado
+Direccion o paquete equivocados
+Si el usuario escribe mal su contrasena
