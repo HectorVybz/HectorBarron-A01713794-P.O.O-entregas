@@ -7,16 +7,14 @@ private:
     string talla;
 
 public:
-    Ropa()
-        : Producto(), talla("") {}
-
+    Ropa() : Producto(), talla("") {}
     Ropa(string nombre, double precio, string talla)
         : Producto(nombre, precio), talla(talla) {}
 
-    string getTalla() { return talla; }
+    string getTalla() const { return talla; }
     void setTalla(string t) { talla = t; }
 
-    string descripcion() override {
+    string descripcion() const override {
         return "Ropa: " + nombre + ", Precio: $" + to_string(precio) + ", Talla: " + talla;
     }
 };
