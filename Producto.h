@@ -9,20 +9,21 @@ protected:
     double precio;
 
 public:
-    Producto()
-        : nombre(""), precio(0.0) {}
+    Producto() : nombre(""), precio(0.0) {}
+    Producto(string nombre, double precio) : nombre(nombre), precio(precio) {}
 
-    Producto(string nombre, double precio)
-        : nombre(nombre), precio(precio) {}
-
-    string getNombre() { return nombre; }
-    double getPrecio() { return precio; }
+    string getNombre() const { return nombre; }
+    double getPrecio() const { return precio; }
 
     void setNombre(string nom) { nombre = nom; }
     void setPrecio(double p) { precio = p; }
 
-    virtual string descripcion() {
-        return "Producto: " + nombre + ", Precio: $" + to_string(precio);
+    virtual string descripcion() const = 0; // metodo puro
+    virtual ~Producto() {}
+
+    // Sobrecarga de operador igualdad
+    bool operator==(const Producto& otro) const {
+        return nombre == otro.nombre && precio == otro.precio;
     }
 };
 
