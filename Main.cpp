@@ -9,8 +9,8 @@ int main() {
     Ropa* camiseta = new Ropa("Camiseta Negra", 299.0, "M");
 
     Carrito carrito;
-    carrito.agregarProducto(laptop);
-    carrito.agregarProducto(camiseta);
+    carrito += laptop;
+    carrito += camiseta;
 
     cout << "Productos en el carrito:" << endl;
     carrito.mostrarProductos();
