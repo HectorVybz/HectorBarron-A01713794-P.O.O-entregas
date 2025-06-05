@@ -14,7 +14,7 @@ public:
         productos.push_back(p);
     }
 
-    double calcularTotal() {
+    double calcularTotal() const {
         double total = 0.0;
         for (auto p : productos) {
             total += p->getPrecio();
@@ -22,10 +22,16 @@ public:
         return total;
     }
 
-    void mostrarProductos() {
+    void mostrarProductos() const {
         for (auto p : productos) {
             cout << p->descripcion() << endl;
         }
+    }
+
+    // Sobrecarga de operador += para agregar productos
+    Carrito& operator+=(Producto* p) {
+        agregarProducto(p);
+        return *this;
     }
 };
 
