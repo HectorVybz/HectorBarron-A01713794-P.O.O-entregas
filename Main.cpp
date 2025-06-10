@@ -1,6 +1,6 @@
 /*
  * Proyecto Carrito de Compras Online
- * Hector ALejandro Barron Tamayo
+ * Hector Alejandro Barron Tamayo
  * A01713794
  * 10/06/2025
  *
@@ -15,7 +15,7 @@
 using namespace std;
 
 void mostrarProductosDisponibles(Producto* productos[], int total) {
-    cout << "=== PRODUCTOS DISPONIBLES ===" << endl;
+    cout << "PRODUCTOS DISPONIBLES" << endl;
     for (int i = 0; i < total; i++) {
         cout << "(" << i + 1 << ") " << productos[i]->descripcion() << endl;
     }
@@ -25,7 +25,7 @@ void mostrarProductosDisponibles(Producto* productos[], int total) {
 int main() {
     // Crear productos disponibles
     Electronico* laptop = new Electronico("Laptop ASUS", 15000.0, 24);
-    Electronico* audifonos = new Electronico("Audífonos Bluetooth", 1200.0, 12);
+    Electronico* audifonos = new Electronico("Audifonos Bluetooth", 1200.0, 12);
     Ropa* camiseta = new Ropa("Camiseta Negra", 299.0, "M");
     Ropa* jeans = new Ropa("Jeans Azul", 599.0, "32");
 
@@ -37,13 +37,13 @@ int main() {
     int opcion;
 
     do {
-        cout << "=== MENÚ PRINCIPAL ===\n";
+        cout << "MENU PRINCIPAL\n";
         cout << "1. Ver productos disponibles\n";
         cout << "2. Agregar producto al carrito\n";
         cout << "3. Ver productos en el carrito\n";
         cout << "4. Ver total a pagar\n";
         cout << "5. Salir\n";
-        cout << "Selecciona una opción: ";
+        cout << "Selecciona una opcion: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -54,20 +54,20 @@ int main() {
             case 2: {
                 int seleccion;
                 mostrarProductosDisponibles(disponibles, TOTAL_PRODUCTOS);
-                cout << "Selecciona el número del producto que deseas agregar: ";
+                cout << "Selecciona el numero del producto que deseas agregar: ";
                 cin >> seleccion;
 
                 if (seleccion >= 1 && seleccion <= TOTAL_PRODUCTOS) {
                     carrito += disponibles[seleccion - 1];
-                    cout << "✓ Producto agregado al carrito.\n";
+                    cout << "Producto agregado al carrito.\n";
                 } else {
-                    cout << "✖ Opción inválida.\n";
+                    cout << "Opcion invalida.\n";
                 }
                 break;
             }
 
             case 3:
-                cout << "=== PRODUCTOS EN EL CARRITO ===\n";
+                cout << "PRODUCTOS EN EL CARRITO\n";
                 carrito.mostrarProductos();
                 break;
 
@@ -80,14 +80,14 @@ int main() {
                 break;
 
             default:
-                cout << "Opción no válida. Intenta nuevamente.\n";
+                cout << "Opcion no valida. Intenta nuevamente.\n";
         }
 
         cout << "\n-----------------------------\n";
 
     } while (opcion != 5);
 
-    // Liberar memoria dinámica
+    // Liberar memoria dinamica
     delete laptop;
     delete audifonos;
     delete camiseta;
